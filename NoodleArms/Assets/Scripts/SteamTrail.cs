@@ -13,7 +13,7 @@ public class SteamTrail : MonoBehaviour {
 	private float lineSegment = 0.0f;
 	private int currentNumberOfPoints = 2;
 	private bool allPointsAdded = false;
-	int numberOfPoints = 20;
+	int numberOfPoints = 30;
 	public float updateSpeed = 0.25f;
 	public float riseSpeed  = 0.25f;
 	public float spread = 0.2f;

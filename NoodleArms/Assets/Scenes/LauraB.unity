@@ -656,8 +656,8 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 41634
-      atime2: 65535
+      atime1: 31611
+      atime2: 50501
       atime3: 0
       atime4: 0
       atime5: 0
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361e607d60a55124299732412f294b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateSpeed: 0.25
+  updateSpeed: 0.2
   riseSpeed: 1
   spread: 0.3
 --- !u!114 &501948938
