@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoodleRight_Movement : MonoBehaviour
+public class NoodleMovement : MonoBehaviour
 {
     public enum Hand { Right, Left }
     public Hand currentHand;
