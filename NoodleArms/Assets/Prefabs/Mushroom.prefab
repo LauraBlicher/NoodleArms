@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4315584896936666}
   - component: {fileID: 212816249101144818}
-  - component: {fileID: 70103131686997918}
-  - component: {fileID: 70152198333021332}
   - component: {fileID: 50674378597341240}
+  - component: {fileID: 60724823608353856}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Topping
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1486029831018360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.75, y: -14.09, z: 0}
+  m_LocalPosition: {x: 39.5, y: -14.09, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,23 +62,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &70103131686997918
-CapsuleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1486029831018360}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.11}
-  m_Size: {x: 1.25, y: 1.02}
-  m_Direction: 1
---- !u!70 &70152198333021332
-CapsuleCollider2D:
+--- !u!60 &60724823608353856
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -91,8 +75,41 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.48, y: 1.28}
-  m_Direction: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.42999998, y: -0.25}
+      - {x: 0.52, y: -0.22999999}
+      - {x: 0.59999996, y: -0.14}
+      - {x: 0.61, y: -0.089999996}
+      - {x: 0.61, y: 0.16}
+      - {x: 0.58, y: 0.25}
+      - {x: 0.55, y: 0.32999998}
+      - {x: 0.45, y: 0.52}
+      - {x: 0.29999998, y: 0.63}
+      - {x: -0.13, y: 0.63}
+      - {x: -0.34, y: 0.57}
+      - {x: -0.45999998, y: 0.5}
+      - {x: -0.59, y: 0.35}
+      - {x: -0.64, y: 0.099999994}
+      - {x: -0.64, y: -0.24}
+      - {x: -0.55, y: -0.35999998}
+      - {x: -0.35999998, y: -0.42999998}
+      - {x: -0.17, y: -0.32999998}
+      - {x: -0.19, y: -0.55}
+      - {x: -0.04, y: -0.64}
+      - {x: 0.17999999, y: -0.64}
+      - {x: 0.29, y: -0.53}
+      - {x: 0.28, y: -0.32}
+      - {x: 0.25, y: -0.25}
 --- !u!212 &212816249101144818
 SpriteRenderer:
   m_ObjectHideFlags: 1
