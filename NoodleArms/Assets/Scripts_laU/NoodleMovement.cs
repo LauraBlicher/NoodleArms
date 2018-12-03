@@ -5,7 +5,7 @@ using UnityEngine;
 public class NoodleMovement : MonoBehaviour
 {
     public enum Hand { Right, Left }
-    public Hand currentHand;
+    public Hand currentHand = Hand.Right;
     Rigidbody2D rbody;
     public float speed = 1f;
 
@@ -17,7 +17,6 @@ public class NoodleMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        currentHand = Hand.Right;
         rbody = GetComponent<Rigidbody2D>();
         switch (currentHand){
             case Hand.Left:
