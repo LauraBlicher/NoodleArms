@@ -40,7 +40,7 @@ public class SteamTrail : MonoBehaviour {
 		}
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		timeSinceUpdate = timeSinceUpdate + Time.deltaTime; // Update time.
 
 		// If it's time to update the line...
@@ -64,6 +64,7 @@ public class SteamTrail : MonoBehaviour {
 			// Make each point in the line take the position and direction of the one before it (effectively removing the last point from the line and adding a new one at transform position).
 			for (int i = currentNumberOfPoints - 1; i > 0; i-- ) {
 				tempVec = positions[i-1];
+				//tempVec = new Vector3 (positions [i - 1].x, Mathf.Clamp (positions [i - 1].y, 0f, 1f), positions [i - 1].z);
 				positions[i] = tempVec;
 				tempVec = directions[i-1];
 				directions[i] = tempVec;

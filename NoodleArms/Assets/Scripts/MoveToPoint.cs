@@ -14,8 +14,13 @@ public class MoveToPoint : MonoBehaviour {
 	private float distCovered;
 	private float fracJourney;
 
+	private bool move;
+	public float delay = 3f;
+	public float speed = 1f;
+
 	void Start()
 	{
+		StartCoroutine (Delay ());
 		startTime = Time.time;
 		if (moveThisObject)
 		{
@@ -25,27 +30,38 @@ public class MoveToPoint : MonoBehaviour {
 	}
 	void Update()
 	{
-		distCovered = (Time.time - startTime) * moveSpeed;
-		fracJourney = distCovered / journeyLength;
-		if (reverseMove)
-		{
-			objectToUse.position = Vector3.Lerp(pointB.transform.position, pointA.transform.position, fracJourney);
+//		distCovered = (Time.time - startTime) * moveSpeed;
+//		fracJourney = distCovered / journeyLength;
+//		if (reverseMove)
+//		{
+//			objectToUse.position = Vector3.Lerp(pointB.transform.position, pointA.transform.position, fracJourney);
+//		}
+//		else
+//		{
+//			objectToUse.position = Vector3.Lerp(pointA.transform.position, pointB.transform.position, fracJourney);
+//		}
+//		if ((Vector3.Distance(objectToUse.position, pointB.transform.position) == 0.0f || Vector3.Distance(objectToUse.position, pointA.transform.position) == 0.0f)) //Checks if the object has travelled to one of the points
+//		{
+//			if (reverseMove)
+//			{
+//				reverseMove = false;
+//			}
+//			else
+//			{
+//				reverseMove = true;
+//			}
+//			startTime = Time.time;
+//		}
+
+		if (move) {
+			transform.localPosition = new Vector3 (0f, Mathf.Lerp (transform.localPosition.y, transform.localPosition.y - speed * Time.deltaTime, speed * Time.deltaTime));
 		}
-		else
-		{
-			objectToUse.position = Vector3.Lerp(pointA.transform.position, pointB.transform.position, fracJourney);
-		}
-		if ((Vector3.Distance(objectToUse.position, pointB.transform.position) == 0.0f || Vector3.Distance(objectToUse.position, pointA.transform.position) == 0.0f)) //Checks if the object has travelled to one of the points
-		{
-			if (reverseMove)
-			{
-				reverseMove = false;
-			}
-			else
-			{
-				reverseMove = true;
-			}
-			startTime = Time.time;
-		}
+	}
+
+	IEnumerator Delay()
+	{
+		move = true;
+		yield return new WaitForSeconds (delay);
+		move = false;
 	}
 }
