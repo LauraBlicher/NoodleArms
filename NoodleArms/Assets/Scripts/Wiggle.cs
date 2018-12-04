@@ -12,17 +12,24 @@ public class Wiggle : MonoBehaviour {
 	public float delayRot = 0.5f;
 	private float newRot;
 	private float newPosX, newPosY;
+	private bool shake;
+	private bool isCam; 
 
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (Rotate ());
 		StartCoroutine (Move ());
+		if (gameObject.name != "Main Camera") {
+			shake = true;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3 (Mathf.Lerp(transform.position.x, transform.position.x + newPosX, speedDist*Time.deltaTime), Mathf.Lerp(transform.position.y, transform.position.y + newPosY, speedDist*Time.deltaTime), transform.position.z);
-		transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, Mathf.Lerp(transform.rotation.z, transform.rotation.z + newRot, speedRot*Time.deltaTime), transform.rotation.w);
+		if (shake) {
+			Shake ();
+			isCam = true;
+		}
 	}
 
 	IEnumerator Rotate(){
@@ -37,6 +44,24 @@ public class Wiggle : MonoBehaviour {
 			newPosX = Random.Range (amountDistX * -1, amountDistX);
 			newPosY = Random.Range (amountDistY * -1, amountDistY);
 			yield return new WaitForSeconds (delayDist);
+		}
+	}
+
+	public void StartShake(){
+		shake = true;
+	}
+
+	public void StopShake(){
+		shake = false;
+		GetComponent<Camera> ().orthographicSize = 5f;
+	}
+
+	public void Shake(){
+		transform.position = new Vector3 (Mathf.Lerp(transform.position.x, transform.position.x + newPosX, speedDist*Time.deltaTime), Mathf.Lerp(transform.position.y, transform.position.y + newPosY, speedDist*Time.deltaTime), transform.position.z);
+		transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, Mathf.Lerp(transform.rotation.z, transform.rotation.z + newRot, speedRot*Time.deltaTime), transform.rotation.w);
+		if (isCam) {
+			float camZoom = GetComponent<Camera> ().orthographicSize;
+			camZoom = Mathf.Lerp (camZoom, camZoom + Random.Range (amountDistX * -1, amountDistX), speedDist * Time.deltaTime);
 		}
 	}
 }
