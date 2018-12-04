@@ -25,7 +25,7 @@ public class KillZone : MonoBehaviour {
 			other.gameObject.SetActive(false);
 			Topping = Topping - 1;
 			SetCountText ();
-			soundEffects.PlayOneShot (audioClip [0]);
+		soundEffects.PlayOneShot (audioClip [0]);
 		}
 	}
 

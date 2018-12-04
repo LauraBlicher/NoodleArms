@@ -15,7 +15,7 @@ public class Scrol_Background : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        float newPos = Mathf.Repeat(Time.time * csrollSpeed, 130);
+        float newPos = Mathf.Repeat(Time.time * csrollSpeed, 132);
         transform.position = startPos + Vector2.right * newPos;
 
 
