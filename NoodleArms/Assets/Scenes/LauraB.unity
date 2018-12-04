@@ -709,6 +709,7 @@ GameObject:
   - component: {fileID: 398059131}
   - component: {fileID: 398059134}
   - component: {fileID: 398059135}
+  - component: {fileID: 398059136}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -800,6 +801,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 675742d798ba8a946a6ac3837e91504b, type: 2}
+--- !u!114 &398059136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398059130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ed913d0da2a664490f6765d06b3699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountDistX: 10
+  amountDistY: 10
+  speedDist: 5
+  delayDist: 0.82
+  amountRot: 0.1
+  speedRot: 1
+  delayRot: 0.01
 --- !u!4 &501948936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4459385065793780, guid: 908f173cdadc0d34e97e7839198e1768,
@@ -1892,6 +1911,16 @@ Prefab:
       propertyPath: loseText
       value: 
       objectReference: {fileID: 854924023}
+    - target: {fileID: 114451582237148494, guid: d058dc3fe812fb244ba0a265a18d92cd,
+        type: 2}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 398059130}
+    - target: {fileID: 114451582237148494, guid: d058dc3fe812fb244ba0a265a18d92cd,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 398059130}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d058dc3fe812fb244ba0a265a18d92cd, type: 2}
   m_IsPrefabAsset: 0
